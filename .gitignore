@@ -2,3 +2,4 @@ build
 dist
 multispot_utils.egg-info
 multispot_utils/__pycache__
+__pycache__
