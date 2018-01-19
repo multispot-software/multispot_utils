@@ -1,0 +1,2 @@
+include versioneer.py
+include multispot_utils/_version.py

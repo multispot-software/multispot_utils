@@ -1,5 +1,5 @@
 from setuptools import setup
-__version__ = '0.1'
+import versioneer
 
 
 project_name = 'multispot_utils'
@@ -13,7 +13,8 @@ Various utilities for multispot data.
 
 setup(
     name=project_name,
-    version=__version__,
+    version=versioneer.get_version(),
+    cmdclass=versioneer.get_cmdclass(),
     author='Antonino Ingargiola',
     author_email='tritemio@gmail.com',
     url='https://github.com/multispot-software/multispot_utils',
