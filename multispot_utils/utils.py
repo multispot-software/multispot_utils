@@ -20,6 +20,7 @@ def info_html(d):
     <h3>{span.format(text='Folder:', size=100)} {fname.parent}</h3>
     <blockquote><p class="lead">{d.description.decode()}</p></blockquote>
     <ul>
+    <li>{span.format(text='Measurement Type:', size=150)} {d.meas_type} &nbsp;&nbsp;&nbsp; ({d.nch} spot)</li>
     <li>{span.format(text='Acquisition duration:', size=150)} {float(d.acquisition_duration):.1f} s </li>
     <li>{span.format(text='Laser power:', size=150)}
     """
