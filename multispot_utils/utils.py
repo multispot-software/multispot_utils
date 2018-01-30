@@ -9,6 +9,10 @@ pd.options.display.max_rows = 48
 def info_html(d):
     fname = Path(d.fname)
     laser_powers = d.setup['excitation_input_powers'] * 1e3
+    power_unit = 'mW'
+    if any(laser_powers[laser_powers > 0] < 10):
+        power_unit = 'μW'
+        laser_powers *= 1e3
     laser_wavelengths = d.setup['excitation_wavelengths'] * 1e9
     span = "<span style='display: inline-block; width: {size}px;'> {text} </span>"
     s = f"""
@@ -20,7 +24,7 @@ def info_html(d):
     <li>{span.format(text='Laser power:', size=150)}
     """
     for wavelen, power in zip(laser_wavelengths, laser_powers):
-        s += f'<b>{power:.0f} mW</b> @ {wavelen} nm &nbsp;&nbsp;&nbsp;'
+        s += f'<b>{power:.0f} {power_unit}</b> @ {wavelen} nm &nbsp;&nbsp;&nbsp;'
     s += '</li>'
     if d.alternated:
         s += f"<li>{span.format(text='ALEX period [offset]:', size=150)} "
