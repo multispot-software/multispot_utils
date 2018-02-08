@@ -7,6 +7,8 @@ pd.options.display.max_rows = 48
 
 
 def info_html(d):
+    """Fancy HTML display of FRETBursts's Data information in the Notebook.
+    """
     fname = Path(d.fname)
     laser_powers = d.setup['excitation_input_powers'] * 1e3
     power_unit = 'mW'

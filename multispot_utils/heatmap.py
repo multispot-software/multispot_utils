@@ -2,13 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Spot with horizontal layout
-# first row goes from 0 to 11 (left to right)
-spotsh = np.arange(48).reshape(4, 12)
-
-# Spots with vertical layout
-# The top left corner (0, 0) is 47, columns decrease as row increases
-spotsv = spotsh.T[::-1, ::-1]
+from .manta48 import spotsv
 
 
 def heatmap48(values=None, title=None, vert=False, figsize=(14, 4), ax=None,
