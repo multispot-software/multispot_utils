@@ -1,4 +1,4 @@
-from manta48 import spotsh, spotsv
+from .manta48 import spotsh, spotsv
 from .heatmap import heatmap48
 from .utils import info_html
 
